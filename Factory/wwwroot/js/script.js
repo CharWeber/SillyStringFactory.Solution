@@ -1,6 +1,6 @@
 const container = document.querySelector('.test-room');
-const colorButton = document.getElementById('colorButton');
-let colorClass = "sillyString"
+
+
 
 
 let mouseStillDown = false;
@@ -12,7 +12,7 @@ function sillyString(e){
 
   const string = document.createElement('div');
   
-  string.classList.add(colorClass);
+  string.classList.add('sillyString');
   string.id = 'string' + stringCount;
   
   const screenHeight = e.view.innerHeight;
@@ -23,12 +23,26 @@ function sillyString(e){
   
   container.appendChild(string);
   
-  const stringFall = anime ({
-    autoplay:false,
+
+  const bounceUp = anime({
+    autoplay: false,
     targets: '#string' + stringCount,
-    translateY: [0,bottom],
+    translateY: [bottom, 0],
+    duration: 575,
+    easing: 'easeOutQuad',
+    complete: () => {
+      stringFall.play();
+    }
+  });
+  const stringFall = anime({
+    autoplay: false,
+    targets: '#string' + stringCount,
+    translateY: [0, bottom],
     duration: 575,
     easing: 'easeInQuad',
+    complete: () => {
+      bounceUp.play();
+    }
   });
   
   stringFall.play();
@@ -50,6 +64,8 @@ container.addEventListener('mouseup', () => {
   clearInterval(interval_);
   window.onmousemove = null;
 })
+
+
 
 
 
