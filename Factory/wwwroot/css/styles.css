@@ -34,7 +34,7 @@ a{
   border-style: solid;
   border-color:black;
   border-radius: 25px;
-
+  
 }
 .card{
   background-color: slategray;
@@ -46,13 +46,14 @@ a{
   border-style: solid;
   border-color:black;
   border-radius: 25px;
-  }
+  text-align:center;
+}
 
   .sillyString{
     width: 70px;
     height: 70px;
     border-radius:50%;
-    background-color: hsl(276, 100%, 61%);
+    background-image: linear-gradient(to right, red,orange,yellow,green,blue,indigo,violet);
     position:absolute
   }
   .test-room{
@@ -79,3 +80,7 @@ a{
   p{
     font-size: large;
   }
+
+.float{
+  float:right;
+}
