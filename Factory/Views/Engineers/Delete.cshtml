@@ -1,0 +1,12 @@
+@{
+  Layout = "_Layout";
+}
+
+@model Factory.Models.Engineer
+
+<h2>Would you like to delete @Model.Name's profile?</h2>
+
+@using (Html.BeginForm())
+{
+  <input type="submit" value="confirm"/>
+}

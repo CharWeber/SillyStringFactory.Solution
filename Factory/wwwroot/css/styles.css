@@ -1,0 +1,16 @@
+.navbar-div{
+  display: flex;
+	position:fixed;
+	bottom:0px;
+	left:0px;
+	width:100%;
+	color:rgb(0, 0, 0);
+	background:rgba(112, 109, 104, 0.848);
+	padding:8px;
+  justify-content: space-evenly;
+}
+
+a{
+  color:black;
+  text-decoration: underline;
+}
