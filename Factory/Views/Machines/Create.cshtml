@@ -2,16 +2,16 @@
   Layout = "_Layout";
 }
 
-@model Factory.Models.Engineer;
+@model Factory.Models.Machine;
 
-<h1>Enter new Engineer's Info</h1>
+<h1>Enter new Machine's Info</h1>
 
 @using (Html.BeginForm())
 {
   @Html.LabelFor(model => model.Name)
   @Html.TextBoxFor(model=> model.Name)
 
-  <input type="submit" value="Hire!"/>
+  <input type="submit" value="Build!"/>
 
 }
 
