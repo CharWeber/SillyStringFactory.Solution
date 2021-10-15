@@ -25,5 +25,10 @@ namespace Factory.Controllers
         model.Add("Machines", Machines);
         return View(model);
       }
+
+      public ActionResult Testing()
+      {
+        return View();
+      }
     }
 }
