@@ -1,4 +1,32 @@
 @{
   Layout = "_Layout";
 }
+@using Factory.Models;
+
 <h1>Welcome to the FACTORY</h1>
+
+@if (Model["Engineers"].Count ==0)
+{
+  <h3>there are no Engineers employed! No one wants to work anymore!</h3>
+}
+else
+{
+  <h2>Workers on the floor</h2>
+  @foreach(Engineer engineer in Model["Engineers"])
+  {
+    <h3>@engineer.Name</h3><br>
+  }
+}
+
+@if (Model["Machines"].Count == 0)
+{
+  <h3>There are no machines to work on! they've been <em>STOOOOOLEN!</em></h3>
+}
+else
+{
+  <h2>Machines on the floor</h2>
+  @foreach(Machine machine in Model["Machines"])
+  {
+    <h3>@machine.Name</h3><br>
+  }
+}
