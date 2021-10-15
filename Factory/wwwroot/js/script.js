@@ -1,5 +1,7 @@
 const container = document.querySelector('.test-room');
 const colorButton = document.getElementById('colorButton');
+let colorClass = "sillyString"
+
 
 let mouseStillDown = false;
 
@@ -10,7 +12,7 @@ function sillyString(e){
 
   const string = document.createElement('div');
   
-  string.classList.add('sillyString');
+  string.classList.add(colorClass);
   string.id = 'string' + stringCount;
   
   const screenHeight = e.view.innerHeight;
@@ -35,27 +37,22 @@ function sillyString(e){
 
 }
 
-// window.addEventListener('mousedown', (e) => {
-//   interval_ = setInterval(function(){sillyString(e);},  100);;
-// });
-window.addEventListener('mousedown', (e) => {
+container.addEventListener('mousedown', (e) => {
   sillyString(e);
   
-  window.onmousemove = function(e){
+  container.onmousemove = function(e){
     sillyString(e)
   }
   
 });
 
-window.addEventListener('mouseup', () => {
+container.addEventListener('mouseup', () => {
   clearInterval(interval_);
   window.onmousemove = null;
 })
 
-colorButton.addEventListener('click', () =>{
-  let colorValue = document.getElementById("color");
-  console.log(colorValue);
-})
+
+
 
 
 

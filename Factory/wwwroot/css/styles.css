@@ -37,6 +37,8 @@ a{
 
 }
 .card{
+  background-color: slategray;
+  color: black;
   min-width:50%;
   max-width:85%;
   margin:5%;
@@ -49,8 +51,8 @@ a{
   .sillyString{
     width: 70px;
     height: 70px;
-    background-color: pink;
     border-radius:50%;
+    background-color: hsl(276, 100%, 61%);
     position:absolute
   }
   .test-room{
@@ -58,10 +60,16 @@ a{
     height:95vh;
     position:relative;
   }
-  /* body{
-    background: url("../img/MainBg.jpg") no-repeat center center fixed;
+  .buttons{
+    display:flex;
+    height:200px;
+    width: 20%;
+    top:0px;
+  }
+  body{
+    background: url("../img/Body_Bg.jpg") no-repeat center center fixed;
     -webkit-background-size: cover;
     -moz-background-size: cover;
     -o-background-size: cover;
     background-size: cover;
-  } */
+  }

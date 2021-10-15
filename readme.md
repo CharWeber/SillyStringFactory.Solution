@@ -1,4 +1,4 @@
-# Silly String factory
+# Silly String Factory
 
 A Factory organizing application designed to keep track of Machines and engineers licensed to use them.
 
@@ -13,6 +13,7 @@ A Factory organizing application designed to keep track of Machines and engineer
 * _Microsoft.EntityFrameworkCore_
 * _Dotnet EntityFramework Tool_
 * _Microsoft.EntityFrameworkCore.Design_
+* _anime.js_
 
 
 ## Description
@@ -28,30 +29,32 @@ This web application will allow users to add and remove engineers and machines i
 
 * _Clone this repository to your desktop_
 * _Open in text editor_
-* _Create appsettings.json in /Registrar/ directory_
+* _Create appsettings.json in /Factory/ directory_
 * _Copy this code into appsettings.json, replacing YOUR_PASSWORD with your MySQL password:_
 ```
 {
   "ConnectionStrings": {
-      "DefaultConnection": "Server=localhost;Port=3306;database=DATABASE_NAME;uid=root;pwd=YOUR_PASSWORD;"
+      "DefaultConnection": "Server=localhost;Port=3306;database=charles_weber;uid=root;pwd=YOUR_PASSWORD;"
   }
 }
 ```
-* _open new terminal and run SQL 
+* _open new terminal and run SQL_
 
-        $ mysql -uroot -p{your_password})_
+        $ mysql -uroot -p{your_password})
 * _open MySQL Workbench_
 * _In terminal, navigate into SillyStringFactory.Solution/Factory/ and enter the command below to install necessary packages_
 
         $ dotnet restore
-* _enter this command to build the program
+* _enter this command to build the program_
 
-       $ dotnet build to build program_
+       $ dotnet build
 * _enter command to build your database_
 
         $ dotnet ef database update,
-* _check MySql Workbench to make sure the registrars database has been built_
-* _enter command $ dotnet run, to view program in your browser_
+* _check MySql Workbench to make sure the Factory database has been built (named charles_weber)_
+* _enter the command below to view program in your browser_
+
+        $ dotnet run
 
   
 
@@ -63,3 +66,9 @@ This web application will allow users to add and remove engineers and machines i
 _[GPL](https://opensource.org/licenses/gpl-license)_
 
 ## Contact Information
+
+charlesweber@gmail.com
+
+## Photos
+Photo by <a href="https://unsplash.com/@gareth_david?utm_source=unsplash&utm_medium=referral&utm_content=creditCopyText">Gareth David</a> on <a href="https://unsplash.com/s/photos/steel?utm_source=unsplash&utm_medium=referral&utm_content=creditCopyText">Unsplash</a>
+  
