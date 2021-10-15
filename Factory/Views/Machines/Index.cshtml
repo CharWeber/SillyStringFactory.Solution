@@ -5,14 +5,18 @@
 
 <h1>Machines</h1>
 
-@if(Model.Count == 0)
-{
-  <p>Gotta build a machine. Maybe a roomba?</p>
-}
+<div class="list-grid">
+  @if(Model.Count == 0)
+  {
+    <p>Gotta build a machine. Maybe a roomba?</p>
+  }
+  
+  @foreach (Machine machine in Model)
+  {
+    <div class="content-card">
+      <h3>@Html.ActionLink($"{machine.Name}", "Details", new {id = machine.MachineId})</h3>
+    </div>
+  }
+</div>
 
-@foreach (Machine machine in Model)
-{
-  @Html.ActionLink($"{machine.Name}", "Details", new {id = machine.MachineId})<br>
-}
-
-<p>@Html.ActionLink("Build Machine", "Create", "Machines")</p>
+<h3>@Html.ActionLink("Build Machine", "Create", "Machines")</h3>

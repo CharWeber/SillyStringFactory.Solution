@@ -13,4 +13,42 @@
 a{
   color:black;
   text-decoration: underline;
+  display: inline;
 }
+.content-grid
+{
+  display:grid;
+  grid-template-columns: 50% 50%;
+}
+.list-grid
+{
+  display:grid;
+  grid-auto-flow: row;
+}
+.content-card
+{
+  min-width:50%;
+  max-width:85%;
+  margin:5%;
+  padding:5%;
+  border-style: solid;
+  border-color:black;
+  border-radius: 25px;
+
+}
+.card{
+  min-width:50%;
+  max-width:85%;
+  margin:5%;
+  padding:5%;
+  border-style: solid;
+  border-color:black;
+  border-radius: 25px;
+  }
+  /* body{
+    background: url("../img/MainBg.jpg") no-repeat center center fixed;
+    -webkit-background-size: cover;
+    -moz-background-size: cover;
+    -o-background-size: cover;
+    background-size: cover;
+  } */

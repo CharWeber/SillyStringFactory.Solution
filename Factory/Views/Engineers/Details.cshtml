@@ -1,26 +1,33 @@
 @{
-  Layout="_Layout";
+  Layout = "_Layout";
 }
 
 @model Factory.Models.Engineer
 
 <h1>@Model.Name</h1>
 
-@if (Model.MachineJoinEntities.Count ==0)
+@if (Model.MachineJoinEntities.Count == 0)
 {
   <h3>This engineer is not licensed to work on any machines</h3>
 }
-else{
+else
+{
   <h3>This Engineer is Qualified to work on these Machines:</h3>
-  @foreach (var join in Model.MachineJoinEntities)
-  {
-    <h4>@join.Machine.Name</h4>
-    @using (Html.BeginForm("DeleteMachine", "Engineers"))
+
+  <div class="content-grid">
+    @foreach (var join in Model.MachineJoinEntities)
     {
-      @Html.Hidden("joinId", @join.EngineerMachineId)
-      <input type="submit" value="Remove"/>
+      <div class="content-card">
+        <h4>@join.Machine.Name</h4>
+        @using (Html.BeginForm("DeleteMachine", "Engineers"))
+        {
+          @Html.Hidden("joinId", @join.EngineerMachineId)
+          <input type="submit" value="Remove" />
+        }
+      </div>
     }
-  }
+  </div>
+
 }
 @if (ViewBag.NoMachines)
 {
@@ -28,11 +35,12 @@ else{
 }
 else
 {
+  <p>Add a machine to @Model.Name's work list</p>
   @using (Html.BeginForm("AddMachine", "Engineers"))
   {
     @Html.HiddenFor(model => model.EngineerId)
 
-    @Html.Label("select Machine")
+    @Html.Label("Select Machine")
     @Html.DropDownList("MachineId")
 
     <input type="submit" value="Add Machine" />
