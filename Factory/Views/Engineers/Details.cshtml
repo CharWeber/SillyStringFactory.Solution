@@ -1,0 +1,43 @@
+@{
+  Layout="_Layout.cshtml";
+}
+
+@model Factory.Models.Engineer
+
+<h1>@Model.Name</h1>
+
+@if (Model.MachineJoinEntities.Count ==0)
+{
+  <h3>This engineer is not licensed to work on any machines</h3>
+}
+
+<h2>This Engineer is Qualified to work on these Machines:</h2>
+@foreach (var join in Model.MachineJoinEntities)
+{
+  <h4>@join.Name</h4>
+  @using (Html.BeginForm("DeleteMachine", "Engineers"))
+  {
+    @html.Hidden("joinId", @join.EngineerMachineId)
+    <input type="submit" value="Remove"/>
+  }
+}
+
+@if (ViewBag.NoMachines)
+{
+  <h3>There are currently no machines to work on</h3>
+}
+else
+{
+  @using (Html.BeginForm("AddMachine", "Engineers"))
+  {
+    @Html.HiddenFor(model => model.EngineerId)
+
+    @Html.Label("select Machine")
+    @Html.DropDownList("MachineId")
+
+    <input type="submit" value="Add Machine" />
+  }
+}
+
+<p>@Html.ActionLink("Edit Engineer", "Edit", new {id = Model.EngineerId})</p>
+<p>@Html.ActionLink("Delete Engineer", "Delete" , new {id = Model.EngineerId})</p>

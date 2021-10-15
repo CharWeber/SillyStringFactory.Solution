@@ -1,0 +1,18 @@
+@{
+  Layout="_Layout";
+}
+@using Factory.Models
+
+<h1>Engineers</h1>
+
+@if(Model.Count == 0)
+{
+  <p>Lets Hire some workers! is $12 a hour enough? how much could a bunch of bananas cost? $15?</p>
+}
+
+@foreach (Engineer engineer in Model)
+{
+  @Html.ActionLink($"{engineer.Name}", "Details", new {id = engineer.EngineerId})<br>
+}
+
+<p>@Html.ActionLink("Hire Engineer", "Create", "Engineers")</p>

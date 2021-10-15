@@ -1,0 +1,18 @@
+@{
+  Layout = "_Layout";
+}
+
+@model Factory.Models.Engineer;
+
+<h1>Enter new Engineer's Info</h1>
+
+@using (Html.BeginForm())
+{
+  @Html.LabelFor(model => model.Name)
+  @Html.TextBoxFor(model=> Model.Name)
+
+  <input type="submit" value="Hire!"/>
+
+}
+
+<p>@Html.ActionLink("Back", "Index")</p>
