@@ -92,6 +92,7 @@ namespace Factory.Controllers
     {
       var thisJoin = _db.EngineerMachines.FirstOrDefault(join => join.EngineerMachineId == joinId);
       _db.EngineerMachines.Remove(thisJoin);
+      _db.SaveChanges();
       return RedirectToAction ("Index");
     }
   }
